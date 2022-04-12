@@ -38,10 +38,14 @@ An example of the code for the file named  **config.yaml** is shown below:
   dynamo:
     path: "C:\Users\Administrator\Documents\$USERNAME$\DynamoSandbox\DynamoWPFCLI.exe"
     arguments:
-    - '-o ".\script.dyn"'
-    - '-v ".\output.xml"'
-    - '-gp "C:\Program Files\Autodesk\FormIt"'
-    - '-g ".\mesh.json"'
+    - '-o'
+    - 'sphere.dyn'
+    - '-v'
+    - 'output.xml'
+    - '-gp'
+    - 'C:\Program Files\Autodesk\FormIt'  # or Revit
+    - '-g'
+    - 'geometry.json'
 maxParallelProcesses: 1 # must be one, please do not change
 </code></pre>
 

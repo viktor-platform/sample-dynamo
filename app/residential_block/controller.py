@@ -31,7 +31,7 @@ class ResidentialBlockController(ViktorController):
     def geometry_and_data_view(self, params, **kwargs):
 
         # Run the dynamo module and retrieve output geometry and data
-        glb_file, data_output_items = run_dynamo(params)
+        glb_file, data_output_items, dynamo_output_report = run_dynamo(params)
 
         # Some exceptions are raised to direct the user of the application in a certain direction.
         if params.step_2.number_of_houses > params.step_1.number_of_houses:
@@ -135,7 +135,9 @@ class ResidentialBlockController(ViktorController):
         return DownloadResult(word_file, 'my_word_file.docx')
 
     def render_word_report(self, params):
-        data_output, geometry_group = run_dynamo(params)
+        """This method creates a word file report based on the user input parameters and the numerical output from
+        the dynamo model"""
+        _, _, dynamo_output_report = run_dynamo(params)
 
         template_path = Path(__file__).parent.parent / "lib" / "files" / "sample_document.docx"
         components = [WordFileTag('n_houses', params.step_2.number_of_houses),
@@ -143,13 +145,13 @@ class ResidentialBlockController(ViktorController):
                       WordFileTag('n_floors', params.step_2.number_of_floors),
                       WordFileTag('height_floor', params.step_2.height_floor),
                       WordFileTag('height_roof', params.step_2.height_roof),
-                      WordFileTag('floor_area', data_output['(OUTPUT) Floor area per house']),
-                      WordFileTag('total_cost', data_output['(OUTPUT) Total cost']),
-                      WordFileTag('MKI', data_output['(OUTPUT) MKI']), WordFileTag('CO2', data_output['(OUTPUT) CO2'])]
+                      WordFileTag('floor_area', dynamo_output_report['result_floor_area'][0]),
+                      WordFileTag('total_cost', dynamo_output_report['result_total_cost'][0]),
+                      WordFileTag('MKI', dynamo_output_report['result_MKI'][0]),
+                      WordFileTag('CO2', dynamo_output_report['result_floor_CO2'][0])]
 
         with open(template_path, 'rb') as template:
             word_file = render_word_file(template, components)
-
         return word_file
 
 

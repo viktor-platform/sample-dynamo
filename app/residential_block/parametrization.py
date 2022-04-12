@@ -1,4 +1,4 @@
-from viktor.parametrization import Parametrization, Tab, Section, NumberField, GeoPointField, Step, DownloadButton, Text
+from viktor.parametrization import Parametrization, NumberField, GeoPointField, Step, DownloadButton, Text
 
 class ResidentialBlockParametrization(Parametrization):
 
@@ -29,8 +29,8 @@ class ResidentialBlockParametrization(Parametrization):
     step_2.height_floor = NumberField("Height floor [m]", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5)
     step_2.height_roof = NumberField("Height roof [m]", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5)
 
-    step_2.text2 = Text("""Additional output
-    \n On the right-hand side some additional output on the residential block is generated, based on the dynamo model. The output is related to the selected parameters.""")
+    step_2.text2 = Text("""Numerical output
+    \n On the right-hand side the numerical output on the residential block is generated, based on the dynamo model. The output is related to the selected parameters.""")
 
 
     step_3 = Step("Report", views="get_pdf_view")

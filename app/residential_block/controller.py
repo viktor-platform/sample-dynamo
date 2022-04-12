@@ -33,7 +33,7 @@ class ResidentialBlockController(ViktorController):
         # Run the dynamo module and retrieve output geometry and data
         glb_file, data_output_items = run_dynamo(params)
 
-        # Some exceptions to direct the user of the application in a certain direction.
+        # Some exceptions are raised to direct the user of the application in a certain direction.
         if params.step_2.number_of_houses > params.step_1.number_of_houses:
             raise UserException(
                 "Number of houses is larger than provided in step 1! Please go back to step 1 and increase the number of houses.")
@@ -58,11 +58,13 @@ class ResidentialBlockController(ViktorController):
 
     @MapView('Map view', duration_guess=1)  # in seconds, if it is larger or equal to 3, the "update" button will appear
     def get_map_view(self, params: Munch, **kwargs) -> MapResult:
+        """This method draws rectangles on the map, based on the user input parameters"""
+
+        # Create empty list to store the features for the mapview
         features = []
 
         # Whenever a point is created on the map, rectangles are drawn onto the map with the input parameters
         if params.step_1.point:
-            # features = house_on_map(params, features)
 
             center_point = params.step_1.point
             center_x, center_y = center_point.rd[0], center_point.rd[1]
@@ -133,22 +135,17 @@ class ResidentialBlockController(ViktorController):
         return DownloadResult(word_file, 'my_word_file.docx')
 
     def render_word_report(self, params):
-
         data_output, geometry_group = run_dynamo(params)
 
         template_path = Path(__file__).parent.parent / "lib" / "files" / "sample_document.docx"
-        components = []
-        components.append(WordFileTag('n_houses', params.step_2.number_of_houses))
-        components.append(WordFileTag('width', params.step_2.width))
-        components.append(WordFileTag('depth', params.step_2.depth))
-        components.append(WordFileTag('n_floors', params.step_2.number_of_floors))
-        components.append(WordFileTag('height_floor', params.step_2.height_floor))
-        components.append(WordFileTag('height_roof', params.step_2.height_roof))
-
-        components.append(WordFileTag('floor_area', data_output['(OUTPUT) Floor area per house']))
-        components.append(WordFileTag('total_cost', data_output['(OUTPUT) Total cost']))
-        components.append(WordFileTag('MKI', data_output['(OUTPUT) MKI']))
-        components.append(WordFileTag('CO2', data_output['(OUTPUT) CO2']))
+        components = [WordFileTag('n_houses', params.step_2.number_of_houses),
+                      WordFileTag('width', params.step_2.width), WordFileTag('depth', params.step_2.depth),
+                      WordFileTag('n_floors', params.step_2.number_of_floors),
+                      WordFileTag('height_floor', params.step_2.height_floor),
+                      WordFileTag('height_roof', params.step_2.height_roof),
+                      WordFileTag('floor_area', data_output['(OUTPUT) Floor area per house']),
+                      WordFileTag('total_cost', data_output['(OUTPUT) Total cost']),
+                      WordFileTag('MKI', data_output['(OUTPUT) MKI']), WordFileTag('CO2', data_output['(OUTPUT) CO2'])]
 
         with open(template_path, 'rb') as template:
             word_file = render_word_file(template, components)

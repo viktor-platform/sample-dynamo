@@ -1,5 +1,6 @@
 from viktor.parametrization import Parametrization, NumberField, GeoPointField, Step, DownloadButton, Text
 
+
 class ResidentialBlockParametrization(Parametrization):
 
     step_1 = Step('Map', views="get_map_view", next_label="Go to step 2")
@@ -37,10 +38,3 @@ class ResidentialBlockParametrization(Parametrization):
     step_3.text1 = Text("""Create a report of the output results of the dynamo model. This includes the floor area per house, total project cost, MKI and CO2 emission.
     Also the selected parameters are included. A sample of the report is shown on the right side of the screen.""")
     step_3.download_btn = DownloadButton('Download report (docx)','download_file')
-
-
-
-
-
-	
-

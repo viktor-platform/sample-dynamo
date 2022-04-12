@@ -5,6 +5,8 @@ from math import cos, sin, pi
 
 
 def house_on_map(params, features):
+    """This function draws rectangles on the map, based on the user input parameters"""
+
     center_point = params.step_1.point
     center_x, center_y = center_point.rd[0], center_point.rd[1]
     angle = params.step_1.angle * pi / 180
@@ -66,4 +68,4 @@ def house_on_map(params, features):
 
             features.append(MapPolygon(polygon_coords))
 
-            return features
+    return features

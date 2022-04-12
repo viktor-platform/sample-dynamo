@@ -31,7 +31,7 @@ class ResidentialBlockController(ViktorController):
     def geometry_and_data_view(self, params, **kwargs):
 
         # Run the dynamo module and retrieve output geometry and data
-        glb_file, data_output_items, dynamo_output_report = run_dynamo(params)
+        glb_file, dataview_output_items, dynamo_output_report = run_dynamo(params)
 
         # Some exceptions are raised to direct the user of the application in a certain direction.
         if params.step_2.number_of_houses > params.step_1.number_of_houses:
@@ -46,7 +46,7 @@ class ResidentialBlockController(ViktorController):
             raise UserException(
                 "The depth is larger than provided in step 1! Please go back to step 1 and increase the depth.")
 
-        return GeometryAndDataResult(data=DataGroup(*data_output_items), visualization_group=glb_file)
+        return GeometryAndDataResult(data=DataGroup(*dataview_output_items), visualization_group=glb_file)
 
     @PDFView('PDF view', duration_guess=3)
     def get_pdf_view(self, params, **kwargs):
@@ -137,7 +137,7 @@ class ResidentialBlockController(ViktorController):
     def render_word_report(self, params):
         """This method creates a word file report based on the user input parameters and the numerical output from
         the dynamo model"""
-        _, _, dynamo_output_report = run_dynamo(params)
+        glb_file, dataview_output_items, dynamo_output_report = run_dynamo(params)
 
         template_path = Path(__file__).parent.parent / "lib" / "files" / "sample_document.docx"
         components = [WordFileTag('n_houses', params.step_2.number_of_houses),

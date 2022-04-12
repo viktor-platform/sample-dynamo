@@ -45,7 +45,7 @@ def run_dynamo(params):
 
     # Create list and dictionary to store results (numerical output)
     dynamo_output_report = {}
-    data_output_items = []
+    dataview_output_items = []
 
     # Store output files to dictionary (numerical output)
     with output_file.open_binary() as f:
@@ -58,11 +58,11 @@ def run_dynamo(params):
 
     # Convert output files to Viktor DataItems and store them in a list (numerical output)
     for key in dynamo_output_report.keys():
-        data_output_items.append(
+        dataview_output_items.append(
             DataItem(dynamo_output_report[key][1], round(float(dynamo_output_report[key][0]), 2)))
 
     # Create and convert geometry
     geometry_file = generic_analysis.get_output_file('geometry.json', as_file=True)
     glb_file = convert_geometry_to_glb(geometry_file)
 
-    return glb_file, data_output_items, dynamo_output_report
+    return glb_file, dataview_output_items, dynamo_output_report

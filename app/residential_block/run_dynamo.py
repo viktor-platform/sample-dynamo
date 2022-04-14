@@ -2,13 +2,11 @@ from io import BytesIO
 from viktor.external.generic import GenericAnalysis
 from pathlib import Path
 
-from viktor.utils import memoize
 from viktor.views import DataItem
 from viktor.core import File
 from viktor.external.dynamo import DynamoFile, get_dynamo_result, convert_geometry_to_glb
 
 
-# @memoize
 def run_dynamo(params):
     """ This method collects, updates and then runs the dynamo model. Three output files are generated from the
     dynamo model: the geometry, the numerical output for the Viktor DataView and the numerical output in a dictionary."""

@@ -20,7 +20,6 @@ class ResidentialBlockController(ViktorController):
     label = "ResidentialBlock"
     children = []
     show_children_as = None
-    viktor_convert_entity_field = True
 
     @GeometryAndDataView("Building 3D", duration_guess=5)
     def geometry_and_data_view(self, params, **kwargs):

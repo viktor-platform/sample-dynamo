@@ -48,16 +48,20 @@ def run_dynamo(params):
     # Store output files to dictionary (numerical output)
     with output_file.open_binary() as f:
         dynamo_output_report['result_floor_area'] = [get_dynamo_result(f, id_=output_id_floor_area),
-                                                     "Floor area [m2]"]
+                                                     "Floor area"]
         dynamo_output_report['result_total_cost'] = [get_dynamo_result(f, id_=output_id_total_cost),
-                                                     "Total cost €"]
+                                                     "Total cost"]
         dynamo_output_report['result_MKI'] = [get_dynamo_result(f, id_=output_id_MKI), "MKI"]
         dynamo_output_report['result_floor_CO2'] = [get_dynamo_result(f, id_=output_id_CO2), "CO2 emission"]
 
+    # Suffix is used to specify number units
+    suffix_list = ["m²", "€", "", "ton CO2"]
+
     # Convert output files to Viktor DataItems and store them in a list (numerical output)
-    for key in dynamo_output_report.keys():
+    for list_number, key in enumerate(dynamo_output_report.keys()):
         dataview_output_items.append(
-            DataItem(dynamo_output_report[key][1], round(float(dynamo_output_report[key][0]), 2)))
+            DataItem(dynamo_output_report[key][1], round(float(dynamo_output_report[key][0]), 2),
+                     suffix=suffix_list[list_number]))
 
     # Create and convert geometry
     geometry_file = generic_analysis.get_output_file('geometry.json', as_file=True)

@@ -38,15 +38,23 @@ An example of the code for the file named  **config.yaml** is shown below:
   dynamo:
     path: "C:\Users\Administrator\Documents\$USERNAME$\DynamoSandbox\DynamoWPFCLI.exe"
     arguments:
-    - '-o ".\script.dyn"'
-    - '-v ".\output.xml"'
-    - '-gp "C:\Program Files\Autodesk\FormIt"'
-    - '-g ".\mesh.json"'
+    - '-o'
+    - 'input.dyn'
+    - '-v'
+    - 'output.xml'
+    - '-gp'
+    - 'C:\Program Files\Autodesk\FormIt'  # or Revit
+    - '-g'
+    - 'geometry.json'
 maxParallelProcesses: 1 # must be one, please do not change
 </code></pre>
 
 For more information about the Dynamo CLI is referred to: https://github.com/DynamoDS/Dynamo/wiki/Dynamo-Command-Line-Interface
 
+## Setting up dynamo model
+A few settings are required within the dynamo model in order for Viktor to recognize the input and output. Simply put the
+parameters you want to adjust in the Viktor application to "Is Input" by right-mouse clicking on the node. Same goes for the output
+parameters, then select "Is Output". The name of the node should be the same as the name called by the Dynamo module in your script.
 
 
 

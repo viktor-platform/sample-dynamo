@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/SDK-v13.0.0-blue) <Please check version is the same as specified in requirements.txt>
+
 # Sample application dynamo integration Viktor
 
 In this sample application a solution is presented how to integrate a dynamo model within the Viktor platform. 

@@ -38,7 +38,7 @@ An example of the code for the file named  **config.yaml** is shown below:
 
 <pre><code>executables:
   dynamo:
-    path: "C:\Users\Administrator\Documents\$USERNAME$\DynamoSandbox\DynamoWPFCLI.exe"
+    path: 'C:\Users\Administrator\Documents\$USERNAME$\DynamoSandbox\DynamoWPFCLI.exe'
     arguments:
     - '-o'
     - 'input.dyn'

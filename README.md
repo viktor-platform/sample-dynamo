@@ -1,29 +1,44 @@
-![](https://img.shields.io/badge/SDK-v13.0.0-blue) <Please check version is the same as specified in requirements.txt>
+# Tuturial dynamo 
 
-# Sample application dynamo integration Viktor
+## Introduction 
 
-In this sample application a solution is presented how to integrate a dynamo model within the Viktor platform. 
-The user provides the parameters for the dynamo model within the Viktor application. 
-With these parameters, the dynamo model is computed by the Viktor worker. This is done with the command line interface included within DynamoSandbox. 
-The geometry is created with the help of either Autodesk Revit or FormIt. The geometry JSON is then converted to mesh, which is rendered and visualized in Viktor. 
+In this tutorial, we will learn how to seamlessly integrate a dynamo model into the Viktor platform. With the help of Dynamo Sandbox, a visual programming tool for creating complex parametric models, we can efficiently produce accurate 3D models. 
 
-An example of the application is shown in the image below.
+To start, the user provides the necessary parameters for the dynamo model within the Viktor application. The Viktor worker then computes the dynamo model using the command-line interface included within Dynamo Sandbox. The geometry of the model is generated using either Autodesk Revit or FormIt. The geometry JSON is then converted to a mesh, which is rendered and visualized in Viktor.
 
-![Alt text](README_image.jpg?raw=true "Example")
+In addition to creating the app, this tutorial will also cover common troubleshooting issues that may arise during the integration process. Furthermore, we will discuss how to install the worker, which is required to run the analysis.
 
-## Setting up worker
-A worker is necessary in order to run this application. Below is described how to configure the worker:
+## Setting up worker 
+A worker is a program that connects VIKTOR with third-party software to execute tasks and retrieve results through the platform.  The worker communicates with the VIKTOR cloud via an encrypted  connection, eliminating the need to open public ports on the network. For Dynamo integration, the generic worker must be installed. Follow the steps below:
 
-1. Install the generic worker
-2. Install DynamoSandbox (http://dynamobim.org/download/)
-3. Install either Autodesk Revit or FormIt
-**Note:** *Autodesk Formit can be installed without accepting any terms and conditions / end-user license agreements. 
-After starting the program you are asked to sign in to your autodesk account, 
-however, you can use the geometry DLLs with DynamoSandbox without doing this.*
+1. Select the generic worker. The installer starts an installation wizard from which the worker can be configured. Administrator rights on the machine are required to perform the installation.
 
-4. Create a new file named **config.yaml** inside same folder as the worker executive. 
+2. Specification of the installation directory. The standard directory that is used for the installation is: C:\Program Files\Viktor\Viktor for 
 
-The config file should contain the path to the DynamoSandbox executable.
+```
+C:\Program Files\Viktor\Viktor for <application> <software package> <version>
+```
+3. Configuration of the worker. Using the installation wizard you will be asked to fill the required information step-by-step. During this installation wizard you are asked for your  credentials 
+
+4. For the credentials follow the steps that are shown in the picture below:
+
+![My Image](Images_readme/Credentials.png)
+$\qquad$ 4.1 Go to workers tab 
+
+$\qquad$ 4.2 Press the button "Create worker" (top right)
+
+$\qquad$ 4.3 Fill in the description, allocation to specific and use your workspace  
+
+$\qquad$ 4.4 Press on create, you will get the following pop up(see figure below). Paste the credential code and placed in it in the install wizard immediately. Viktor will not preserve this data for security reasons.
+
+
+![My Image](Images_readme/Credentials_popup.png)
+
+5. Next step is to install formit [Download link](https://formit.autodesk.com/)
+
+6. Open the **config.yaml** inside the same folder as the generic worker executive(see step 2)
+
+Delete everything inside the file. The config file should contain the path to the DynamoSandbox executable, that is automatically installed with Formit
 
 Additionally, the file should contain the following arguments:
 
@@ -36,24 +51,56 @@ The temporary dynamo script, geometry file and json file are created within the 
 
 An example of the code for the file named  **config.yaml** is shown below:
 
+```
 <pre><code>executables:
   dynamo:
-    path: 'C:\Users\Administrator\Documents\$USERNAME$\DynamoSandbox\DynamoWPFCLI.exe'
+    path: 'C:\Program Files\Autodesk\FormIt\DynamoSandbox\DynamoWPFCLI.exe'
     arguments:
     - '-o'
     - 'input.dyn'
     - '-v'
     - 'output.xml'
     - '-gp'
-    - 'C:\Program Files\Autodesk\FormIt'  # or Revit
+    - 'C:\Program Files\Autodesk\FormIt' 
     - '-g'
     - 'geometry.json'
 maxParallelProcesses: 1 # must be one, please do not change
 </code></pre>
+```
 
 For more information about the Dynamo CLI is referred to: https://github.com/DynamoDS/Dynamo/wiki/Dynamo-Command-Line-Interface
 
-## Setting up dynamo model
-A few settings are required within the dynamo model in order for Viktor to recognize the input and output. Simply put the
-parameters you want to adjust in the Viktor application to "Is Input" by right-mouse clicking on the node. Same goes for the output
-parameters, then select "Is Output". The name of the node should be the same as the name called by the Dynamo module in your script.
+7. Run the **viktor-worker-gneric** file as an administrator. You should see a green bullet in the top right corner, see red circle in figure below. This means the worker succesfoll installed.
+
+![My Image](Images_readme/Connection.png)
+
+## Updating model 
+The dynamo file has got the following input paramaters:
+| Parameter  | User input |
+| ------------- | ------------- |
+| Number of houses | {{n_houses}}  |
+| Width  | {{width}}  |
+| Depth | {{depth}}  |
+| Number of floors  | {{n_floors}}  |
+| Height floor  | {{height_floor}}  |
+| Height roof  | {{height_roof}}  |
+
+
+### Paramatrization zone 
+The next is to add inputfields in the paramatrization to fill in the variables of the dynamo file. We will use the numberfield. See code below:
+```
+from viktor.parametrization import ViktorParametrization, NumberField
+
+class Parametrization(ViktorParametrization):
+
+    # Input fields
+    number_of_houses = NumberField("Number of houses", max=8.0, min=1.0, variant='slider', step=1.0, default=3.0)
+    number_of_floors = NumberField("Number of floors", max=5.0, min=1.0, variant='slider', step=1.0, default=2.0)
+    depth = NumberField("Depth [m]", max=10.0, min=5.0, variant='slider', step=1.0, default=8.0)
+    width = NumberField("Width [m]", max=6.0, min=4.0, variant='slider', step=1.0, default=5.0)
+    height_floor = NumberField("Height floor", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5, suffix='m')
+    height_roof = NumberField("Height roof", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5, suffix='m')
+    
+```
+
+### Updating model 

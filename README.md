@@ -79,10 +79,10 @@ class Parametrization(ViktorParametrization):
 ```
 
 ### Step 1.3 Define the app logic to update the dynamo file
- this step, we will define the code to take the parameters as input, update the dynamo file, and return the updated input file and dynamo file. This will be done by creating a `staticmethod`  in the `controller` class, similar to what is described in the [Generic integration](https://docs.viktor.ai/docs/create-apps/software-integrations/dynamo) section of the VIKTOR documentation.
+ This step, we will define the code to take the parameters as input, update the dynamo file, and return the updated files. This will be done by creating a `staticmethod`  in the `controller` class, similar to what is described in the [Generic integration](https://docs.viktor.ai/docs/create-apps/software-integrations/dynamo) section of the VIKTOR documentation.
 
 
-he following code will update the nodes of the dynamo file and generate an input file  with the parameters from the parametrization class:
+The following code will update the nodes of the dynamo file and generate an input file  with the parameters from the parametrization class:
 
 ```python
 from pathlib import Path
@@ -118,7 +118,7 @@ Let us go through the above mentioned logic:
 3. When all inputs have been updated as desired, the generate method can be used to generate an updated `File` object.
 
 ### Step 1.4 Define the app logic to convert the output.xml to a data_group
-In this step, we will define code to extract data from the dynamo file and output file. The dynamo file is used to get the node id, and the output.xml file is used to get the values. We will be creating another `staticmethod`  in the `controller`    class to extract the output of the Dynamo results by using the input and output files. 
+In this step, we will define code to extract data from the dynamo file and output file. The dynamo file is used to get the node id, and the output.xml file is used to get the values. We will be creating another `staticmethod`  in the `controller`    class. See code below:
 
 
 ```python
@@ -216,6 +216,7 @@ C:\Program Files\Viktor\Viktor for <application> <software package> <version>
 4. For the credentials, follow these steps(see picture)
 
 ![My Image](Read_me_files/Credentials.png)
+
 $\qquad$ 4.1 Go to "Workers" tab 
 
 $\qquad$ 4.2 Click the  "Create worker" button (top right)

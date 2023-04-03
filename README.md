@@ -57,7 +57,3 @@ For more information about the Dynamo CLI is referred to: https://github.com/Dyn
 A few settings are required within the dynamo model in order for Viktor to recognize the input and output. Simply put the
 parameters you want to adjust in the Viktor application to "Is Input" by right-mouse clicking on the node. Same goes for the output
 parameters, then select "Is Output". The name of the node should be the same as the name called by the Dynamo module in your script.
-
-
-
-

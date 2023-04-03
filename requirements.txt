@@ -1,2 +1,2 @@
-# viktor==13.0.0
+viktor==13.8.0
 trimesh==3.9.3

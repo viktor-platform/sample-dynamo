@@ -252,7 +252,7 @@ maxParallelProcesses: 1 # must be one, please do not change
 - `-o` Open the dynamo script(input.dyn)
 - `-v` Ouput geometry file (name = output.xml)
 - `-gp` Path to local installation of Autodesk FormIt or Revit
-- `-g` Output Json geometry file
+- `-g` Ouptut geometry file (name = geometry.json)
 
 For more information about the Dynamo CLI is referred to: https://github.com/DynamoDS/Dynamo/wiki/Dynamo-Command-Line-Interface
 

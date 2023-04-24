@@ -1,0 +1,433 @@
+<evaluations>
+  <evaluation0>
+    <Node guid="4d492b19-e21e-40aa-b866-e0868b84821d">
+      <output0 value="Plane(Origin = Point(X = 0.000, Y = 0.000, Z = 0.000), Normal = Vector(X = 0.000, Y = 0.000, Z = 1.000, Length = 1.000), XAxis = Vector(X = 1.000, Y = 0.000, Z = 0.000, Length = 1.000), YAxis = Vector(X = 0.000, Y = 1.000, Z = 0.000, Length = 1.000))" />
+    </Node>
+    <Node guid="e10cb965-e4f6-4263-9a48-fa9eae31b3de">
+      <output0 value="{0,3,6}" />
+    </Node>
+    <Node guid="e798fb9f-ba43-46c6-aba0-b7fccae776fd">
+      <output0 value="2" />
+    </Node>
+    <Node guid="3a3bdc3e-0cf0-48be-92c8-086525884d3c">
+      <output0 value="{0,6,12}" />
+    </Node>
+    <Node guid="ab7772b6-bf89-4eac-b05b-90db0a3a611a">
+      <output0 value="Rectangle(Width = 6.000, Height = 5.000)" />
+    </Node>
+    <Node guid="fa1f3c7c-b520-44e6-b3f7-d2d453367128">
+      <output0 value="6" />
+    </Node>
+    <Node guid="1a1953e1-5cd7-4dcb-9e38-d4d4d0d1b9dc">
+      <output0 value="5" />
+    </Node>
+    <Node guid="e94fb72f-88c1-452a-be49-e8388abd38ba">
+      <output0 value="{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}" />
+    </Node>
+    <Node guid="e5ce52fb-9dd0-49c1-bcd7-476ea32baf76">
+      <output0 value="{Rectangle(Width = 6.000, Height = 5.000),{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}}" />
+    </Node>
+    <Node guid="7d3e2e29-ab8f-40ce-86c5-63fc5920a1b5">
+      <output0 value="2" />
+    </Node>
+    <Node guid="a027e8ed-c454-463f-9848-e265d07eb722">
+      <output0 value="{{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)},{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}}" />
+    </Node>
+    <Node guid="f69e248b-825a-4563-8b60-9c2f4a9a97cf">
+      <output0 value="{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}" />
+    </Node>
+    <Node guid="a7d71d8f-39f3-4244-81c9-456ce25b4b5c">
+      <output0 value="{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}" />
+    </Node>
+    <Node guid="1e0ee531-5e02-4daa-b40f-302a41d7e7ba">
+      <output0 value="{{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)},{Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000),Rectangle(Width = 6.000, Height = 5.000)}}" />
+    </Node>
+    <Node guid="3b9e4c87-6b7f-4034-b59c-dee0399030c8">
+      <output0 value="4" />
+    </Node>
+    <Node guid="bcdafa2d-8646-4cd0-946b-235217f6f56b">
+      <output0 value="{Solid,Solid}" />
+    </Node>
+    <Node guid="f11ced08-7569-4080-b55d-03f1db081aab">
+      <output0 value="{Solid,Solid}" />
+    </Node>
+    <Node guid="8213de21-9f40-40c9-844d-5d3acb4b5b36">
+      <output0 value="{0,6}" />
+    </Node>
+    <Node guid="de464017-8b41-4f21-bc28-9f2201dd35ca">
+      <output0 value="{Solid,Solid}" />
+    </Node>
+    <Node guid="3d1d5081-8dcb-45c9-9477-e50d44637e70">
+      <output0 value="{-3,3,3,-3}" />
+      <output1 value="{2.5,2.5,0,0}" />
+      <output2 value="{6,6,9,9}" />
+    </Node>
+    <Node guid="64b04cf5-aa27-4330-99df-f922bf1eab2a">
+      <output0 value="{3,-3,-3,3}" />
+      <output1 value="{-2.5,-2.5,0,0}" />
+      <output2 value="{6,6,9,9}" />
+    </Node>
+    <Node guid="4a2162b8-b5c4-47b0-ae5d-51276df56076">
+      <output0 value="{Point(X = -3.000, Y = 2.500, Z = 6.000),Point(X = 3.000, Y = 2.500, Z = 6.000),Point(X = 3.000, Y = 0.000, Z = 9.000),Point(X = -3.000, Y = 0.000, Z = 9.000)}" />
+    </Node>
+    <Node guid="a4f8c299-607f-42f6-8af8-599e8dc5bf43">
+      <output0 value="Rectangle(Width = 3.905, Height = 6.000)" />
+    </Node>
+    <Node guid="57898254-19ee-4a23-8712-20d5b4ee4151">
+      <output0 value="Surface" />
+    </Node>
+    <Node guid="b84709b4-83e9-4d9c-bfcb-f2c16215e86d">
+      <output0 value="{Point(X = 3.000, Y = -2.500, Z = 6.000),Point(X = -3.000, Y = -2.500, Z = 6.000),Point(X = -3.000, Y = 0.000, Z = 9.000),Point(X = 3.000, Y = 0.000, Z = 9.000)}" />
+    </Node>
+    <Node guid="318e6efc-3e03-4286-8964-f941d303a8f0">
+      <output0 value="Rectangle(Width = 3.905, Height = 6.000)" />
+    </Node>
+    <Node guid="ad42edaf-d89f-4b9a-9346-52d2c369c92e">
+      <output0 value="Surface" />
+    </Node>
+    <Node guid="d9fe0878-544b-4a1f-8d51-fe748426825f">
+      <output0 value="6" />
+    </Node>
+    <Node guid="1282675f-cbde-4fdc-8795-dea972ddcc7b">
+      <output0 value="3" />
+    </Node>
+    <Node guid="9e080b51-1dda-477a-bda4-2d0f5c62a4bb">
+      <output0 value="3" />
+    </Node>
+    <Node guid="cd1d1788-9972-45f0-9451-ec8b54c1554a">
+      <output0 value="{-3,-3,-3}" />
+      <output1 value="{2.5,0,-2.5}" />
+      <output2 value="{6,9,6}" />
+    </Node>
+    <Node guid="494d377b-8a7b-483f-9d64-84180945bed6">
+      <output0 value="{Point(X = -3.000, Y = 2.500, Z = 6.000),Point(X = -3.000, Y = 0.000, Z = 9.000),Point(X = -3.000, Y = -2.500, Z = 6.000)}" />
+    </Node>
+    <Node guid="1a98a01e-86ad-4d7e-9b5f-c74d7a7d4212">
+      <output0 value="Polygon" />
+    </Node>
+    <Node guid="209e35cc-791a-4ca0-8127-122c75260245">
+      <output0 value="Surface" />
+    </Node>
+    <Node guid="0803bac6-ed4b-4e7e-967c-f91ec154e900">
+      <output0 value="{Solid,Solid}" />
+    </Node>
+    <Node guid="a9d1956b-0241-4236-a114-d63ea2bad8e8">
+      <output0 value="{3,3,3}" />
+      <output1 value="{2.5,0,-2.5}" />
+      <output2 value="{6,9,6}" />
+    </Node>
+    <Node guid="443eb157-6021-40a3-9c50-b1b41b48734f">
+      <output0 value="{Point(X = 3.000, Y = 2.500, Z = 6.000),Point(X = 3.000, Y = 0.000, Z = 9.000),Point(X = 3.000, Y = -2.500, Z = 6.000)}" />
+    </Node>
+    <Node guid="b1db7864-8053-44cd-bbad-6a067938a42d">
+      <output0 value="Polygon" />
+    </Node>
+    <Node guid="74751334-e2cb-4fb2-9cef-5cd3284cfd61">
+      <output0 value="Surface" />
+    </Node>
+    <Node guid="1ed95ef5-e360-483f-9279-fba2d9aef88c">
+      <output0 value="{Solid,Solid}" />
+    </Node>
+    <Node guid="ca625f04-ec29-47b4-9e2a-2de4d54444f2">
+      <output0 value="{3,3}" />
+      <output1 value="{-2.5,-2.5}" />
+      <output2 value="{0,6}" />
+    </Node>
+    <Node guid="749b7a10-9a50-4a76-8115-f6beca1fe2ed">
+      <output0 value="{Point(X = 3.000, Y = -2.500, Z = 0.000),Point(X = 3.000, Y = -2.500, Z = 6.000)}" />
+    </Node>
+    <Node guid="fa31aa7f-01b8-4d52-93b5-c8afbe05ceba">
+      <output0 value="Line(StartPoint = Point(X = 3.000, Y = -2.500, Z = 0.000), EndPoint = Point(X = 3.000, Y = -2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000))" />
+    </Node>
+    <Node guid="7b03aa66-1a18-48fe-b0be-d0a08976949f">
+      <output0 value="{Line(StartPoint = Point(X = 3.000, Y = -2.500, Z = 0.000), EndPoint = Point(X = 3.000, Y = -2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000)),Line(StartPoint = Point(X = 9.000, Y = -2.500, Z = 0.000), EndPoint = Point(X = 9.000, Y = -2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000))}" />
+    </Node>
+    <Node guid="2f69f9ba-e27d-4ea9-89ef-ba7b2f36c37f">
+      <output0 value="Line(StartPoint = Point(X = 3.000, Y = 2.500, Z = 0.000), EndPoint = Point(X = 3.000, Y = 2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000))" />
+    </Node>
+    <Node guid="3f8300be-5259-4f63-bf71-af3b94cbe971">
+      <output0 value="{Point(X = 3.000, Y = 2.500, Z = 0.000),Point(X = 3.000, Y = 2.500, Z = 6.000)}" />
+    </Node>
+    <Node guid="0faecf36-8c0a-4077-a0f0-9ddc2f56e1f3">
+      <output0 value="{3,3}" />
+      <output1 value="{2.5,2.5}" />
+      <output2 value="{0,6}" />
+    </Node>
+    <Node guid="55c6a3ba-12f0-41cd-b16c-4a958cb16dda">
+      <output0 value="{Line(StartPoint = Point(X = 3.000, Y = 2.500, Z = 0.000), EndPoint = Point(X = 3.000, Y = 2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000)),Line(StartPoint = Point(X = 9.000, Y = 2.500, Z = 0.000), EndPoint = Point(X = 9.000, Y = 2.500, Z = 6.000), Direction = Vector(X = 0.000, Y = 0.000, Z = 6.000, Length = 6.000))}" />
+    </Node>
+    <Node guid="d3ece9a1-03ab-4367-ac30-16491f9cbe89">
+      <output0 value="{3,3}" />
+      <output1 value="{2.5,0}" />
+      <output2 value="{6,9}" />
+    </Node>
+    <Node guid="1e08193e-3854-4ed6-882d-dd346d9f2e02">
+      <output0 value="{Point(X = 3.000, Y = 2.500, Z = 6.000),Point(X = 3.000, Y = 0.000, Z = 9.000)}" />
+    </Node>
+    <Node guid="462cd588-96d9-461e-9f75-7ca2f19258f5">
+      <output0 value="Line(StartPoint = Point(X = 3.000, Y = 2.500, Z = 6.000), EndPoint = Point(X = 3.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = -2.500, Z = 3.000, Length = 3.905))" />
+    </Node>
+    <Node guid="b76e5d32-a9c8-45c5-ba56-0817df835823">
+      <output0 value="{3,3}" />
+      <output1 value="{-2.5,0}" />
+      <output2 value="{6,9}" />
+    </Node>
+    <Node guid="767bb264-449d-4be8-8642-177b27c664e4">
+      <output0 value="{Point(X = 3.000, Y = -2.500, Z = 6.000),Point(X = 3.000, Y = 0.000, Z = 9.000)}" />
+    </Node>
+    <Node guid="1e6ac364-485e-4931-a45d-17f1c1f73ef2">
+      <output0 value="Line(StartPoint = Point(X = 3.000, Y = -2.500, Z = 6.000), EndPoint = Point(X = 3.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = 2.500, Z = 3.000, Length = 3.905))" />
+    </Node>
+    <Node guid="4f9dc5c4-c261-439e-afb0-936ba7560877">
+      <output0 value="{Line(StartPoint = Point(X = 3.000, Y = 2.500, Z = 6.000), EndPoint = Point(X = 3.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = -2.500, Z = 3.000, Length = 3.905)),Line(StartPoint = Point(X = 9.000, Y = 2.500, Z = 6.000), EndPoint = Point(X = 9.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = -2.500, Z = 3.000, Length = 3.905))}" />
+    </Node>
+    <Node guid="3228fe61-c658-4d9f-982c-3899b3962ff2">
+      <output0 value="{Line(StartPoint = Point(X = 3.000, Y = -2.500, Z = 6.000), EndPoint = Point(X = 3.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = 2.500, Z = 3.000, Length = 3.905)),Line(StartPoint = Point(X = 9.000, Y = -2.500, Z = 6.000), EndPoint = Point(X = 9.000, Y = 0.000, Z = 9.000), Direction = Vector(X = 0.000, Y = 2.500, Z = 3.000, Length = 3.905))}" />
+    </Node>
+    <Node guid="c23d98a4-1bcd-458d-a6a0-0dcaebd7ae18">
+      <output0 value="{0,0,1,1}" />
+      <output1 value="{2.5,2.5,2.5,2.5}" />
+      <output2 value="{0,1.5,1.5,0}" />
+    </Node>
+    <Node guid="163cec4f-467e-4924-b2c0-cb8cc84fb88c">
+      <output0 value="PolyCurve(NumberOfCurves = 3)" />
+    </Node>
+    <Node guid="bd0f8372-6f8c-49de-b16b-d3190adb0622">
+      <output0 value="{Point(X = 0.000, Y = 2.500, Z = 0.000),Point(X = 0.000, Y = 2.500, Z = 1.500),Point(X = 1.000, Y = 2.500, Z = 1.500),Point(X = 1.000, Y = 2.500, Z = 0.000)}" />
+    </Node>
+    <Node guid="063a2217-503c-48a2-aeeb-77c21e3a5c01">
+      <output0 value="{PolyCurve(NumberOfCurves = 3),PolyCurve(NumberOfCurves = 3)}" />
+    </Node>
+    <Node guid="524e8ed5-6d43-4efc-be55-7f1ffd57d137">
+      <output0 value="{-1.5,-1.5,-0.5,-0.5}" />
+      <output1 value="{2.5,2.5,2.5,2.5}" />
+      <output2 value="{0.7,1.5,1.5,0.7}" />
+    </Node>
+    <Node guid="8082a4fc-7465-42ca-a8ed-40fc3001b76b">
+      <output0 value="{Point(X = -1.500, Y = 2.500, Z = 0.700),Point(X = -1.500, Y = 2.500, Z = 1.500),Point(X = -0.500, Y = 2.500, Z = 1.500),Point(X = -0.500, Y = 2.500, Z = 0.700)}" />
+    </Node>
+    <Node guid="84599266-f3e9-4df3-aba8-1a5a8ae49386">
+      <output0 value="Rectangle(Width = 1.000, Height = 0.800)" />
+    </Node>
+    <Node guid="6ff96aca-5886-4aba-88b6-1aba272a4d9a">
+      <output0 value="{Rectangle(Width = 1.000, Height = 0.800),Rectangle(Width = 1.000, Height = 0.800)}" />
+    </Node>
+    <Node guid="40503771-70f8-4ec0-883a-7853e345abdb">
+      <output0 value="{-1,-1,1,1}" />
+      <output1 value="{-2.5,-2.5,-2.5,-2.5}" />
+      <output2 value="{0,1.5,1.5,0}" />
+    </Node>
+    <Node guid="412b1785-ffbd-4703-bd71-47db0edf8c1c">
+      <output0 value="{Point(X = -1.000, Y = -2.500, Z = 0.000),Point(X = -1.000, Y = -2.500, Z = 1.500),Point(X = 1.000, Y = -2.500, Z = 1.500),Point(X = 1.000, Y = -2.500, Z = 0.000)}" />
+    </Node>
+    <Node guid="58ec68a6-58b7-4f63-a5fc-85ec01ac81f6">
+      <output0 value="PolyCurve(NumberOfCurves = 3)" />
+    </Node>
+    <Node guid="8640553d-b177-4b30-8e66-62fd9f577efd">
+      <output0 value="{Point(X = 0.000, Y = -2.500, Z = 0.000),Point(X = 0.000, Y = -2.500, Z = 1.500)}" />
+    </Node>
+    <Node guid="a7e3e591-4e24-4fac-a4d3-67a43502ac82">
+      <output0 value="{0,0}" />
+      <output1 value="{-2.5,-2.5}" />
+      <output2 value="{0,1.5}" />
+    </Node>
+    <Node guid="a7fb003a-876b-4901-bf68-75ec8164b17b">
+      <output0 value="PolyCurve(NumberOfCurves = 1)" />
+    </Node>
+    <Node guid="1ba16745-cfd6-494c-a855-7463ff6725eb">
+      <output0 value="{PolyCurve(NumberOfCurves = 3),PolyCurve(NumberOfCurves = 3)}" />
+    </Node>
+    <Node guid="a46d44bf-4f67-41d4-b409-14b9643e0c5e">
+      <output0 value="{PolyCurve(NumberOfCurves = 1),PolyCurve(NumberOfCurves = 1)}" />
+    </Node>
+    <Node guid="12f27be4-f9ff-46ec-a642-f6a9b35c486e">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="74d79a0c-5664-4dd1-8769-731059e6c5ee">
+      <output0 value="{Point(X = -1.500, Y = -2.500, Z = 5.000),Point(X = -1.500, Y = -2.500, Z = 3.857),Point(X = -0.500, Y = -2.500, Z = 3.857),Point(X = -0.500, Y = -2.500, Z = 5.000)}" />
+    </Node>
+    <Node guid="40e1ac6f-36e4-4bd3-a95f-bc3dc2a7854e">
+      <output0 value="{-1.5,-1.5,-0.5,-0.5}" />
+      <output1 value="{-2.5,-2.5,-2.5,-2.5}" />
+      <output2 value="{5,3.85714285714286,3.85714285714286,5}" />
+    </Node>
+    <Node guid="52406ceb-28c5-4d5c-8a10-c66dce077d28">
+      <output0 value="Rectangle(Width = 1.000, Height = 1.143)" />
+    </Node>
+    <Node guid="9fa29837-2da4-436c-8cb3-6f1282f81ba8">
+      <output0 value="Rectangle(Width = 1.000, Height = 1.143)" />
+    </Node>
+    <Node guid="7bdcd48e-067a-4529-b948-72177a4206cb">
+      <output0 value="{Point(X = 1.500, Y = -2.500, Z = 5.000),Point(X = 1.500, Y = -2.500, Z = 3.857),Point(X = 0.500, Y = -2.500, Z = 3.857),Point(X = 0.500, Y = -2.500, Z = 5.000)}" />
+    </Node>
+    <Node guid="3a3a2452-4bd0-4afc-9c0c-3d61e2b622da">
+      <output0 value="{1.5,1.5,0.5,0.5}" />
+      <output1 value="{-2.5,-2.5,-2.5,-2.5}" />
+      <output2 value="{5,3.85714285714286,3.85714285714286,5}" />
+    </Node>
+    <Node guid="8e7b97ca-1db6-4d19-b046-bebf2d316b26">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="e91b18de-d071-4e6d-87c7-752adeadb0c0">
+      <output0 value="{0}" />
+    </Node>
+    <Node guid="a8eb5d0a-7305-40e8-9796-6263830d7115">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143),Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="135cdcbb-9fbc-4cf9-b879-e10d71788b22">
+      <output0 value="1" />
+    </Node>
+    <Node guid="bcab35f6-d274-439b-bd23-e9f19e2e267f">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="6c50f29a-5d68-4f61-bf44-5731e3ffe471">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="a191d229-d5bd-4a99-adb1-a73f126b9e83">
+      <output0 value="{0}" />
+    </Node>
+    <Node guid="294b15b3-6a42-4c5d-b983-02733d169154">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143),Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="540de995-36bd-40f4-a5d0-ba77245df98e">
+      <output0 value="1" />
+    </Node>
+    <Node guid="969f0745-0913-4a32-a631-30399b685ede">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="1719fa83-c326-4281-9d43-b33b78f34cfb">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="5b87372c-3143-44d3-b711-502b13280c86">
+      <output0 value="60" />
+    </Node>
+    <Node guid="e4157e5e-f8ae-40a0-919d-0ad76d64c64b">
+      <output0 value="60" />
+    </Node>
+    <Node guid="fe4b547c-7ed4-43c1-8998-7618fb76e3cb">
+      <output0 value="263640" />
+    </Node>
+    <Node guid="94ec8cc6-4f5f-4395-b201-ba2a159a84a5">
+      <output0 value="263640" />
+    </Node>
+    <Node guid="e92b8ffa-57ad-4f3e-8ec6-007541414f82">
+      <output0 value="154736.4" />
+    </Node>
+    <Node guid="1a74e70c-18a5-470a-9f90-e2ef53b74469">
+      <output0 value="154736.4" />
+    </Node>
+    <Node guid="e52ad10b-da0b-497b-b4a7-4f2d873e4f9f">
+      <output0 value="3.042" />
+    </Node>
+    <Node guid="efdef281-90d1-4c19-9c09-347222a4e8e2">
+      <output0 value="3.042" />
+    </Node>
+    <Node guid="46398578-1913-48ed-9fde-9dab9a1c58fe">
+      <output0 value="{{Surface,Surface,Surface,Surface},{Surface,Surface,Surface,Surface}}" />
+    </Node>
+    <Node guid="2ba877cd-6c54-4647-bb79-41741b673f9a">
+      <output0 value="Solid" />
+    </Node>
+    <Node guid="56bcaaf7-8076-4e20-ae9a-0a3f0cbbd412">
+      <output0 value="Solid" />
+    </Node>
+    <Node guid="dbafae47-9566-4620-9b9c-f8f0aadcda4e">
+      <output0 value="0.001" />
+    </Node>
+    <Node guid="718a65d7-2b43-4730-bead-e69134c74536">
+      <output0 value="Solid" />
+    </Node>
+    <Node guid="4f8ae321-7d65-4c35-b48e-79edaaa81279">
+      <output0 value="Solid" />
+    </Node>
+    <Node guid="62eaac5b-2e8d-45df-a45c-e0f2ce999b5e">
+      <output0 value="{GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255)),GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255))}" />
+    </Node>
+    <Node guid="4fa7bfd4-11fc-4950-98ed-290c5c792be0">
+      <output0 value="{GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255)),GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255))}" />
+    </Node>
+    <Node guid="860e5b09-1d65-48ce-91cd-f9416d48dc1c">
+      <output0 value="{GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255)),GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255))}" />
+    </Node>
+    <Node guid="8da854d1-97cd-47eb-9027-e5626ff515d8">
+      <output0 value="{GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255)),GeometryColor(Geometry = Solid, Appearance = Color(Red = 255, Green = 51, Blue = 0, Alpha = 255))}" />
+    </Node>
+    <Node guid="643562d6-ef39-4049-aaab-7a5791b713cd">
+      <output0 value="{GeometryColor(Geometry = Solid, Appearance = Color(Red = 204, Green = 255, Blue = 204, Alpha = 255)),GeometryColor(Geometry = Solid, Appearance = Color(Red = 204, Green = 255, Blue = 204, Alpha = 255))}" />
+    </Node>
+    <Node guid="a1ac628a-3283-4152-bbbf-ccf688432a11">
+      <output0 value="Color(Red = 204, Green = 255, Blue = 204, Alpha = 255)" />
+    </Node>
+    <Node guid="5da224fb-90cd-4bbd-a924-6c33dd67cc61">
+      <output0 value="204" />
+      <output1 value="255" />
+      <output0 value="204" />
+    </Node>
+    <Node guid="d070d653-84fe-4524-a17a-fc2841151094">
+      <output0 value="255" />
+      <output1 value="51" />
+      <output2 value="0" />
+    </Node>
+    <Node guid="2008fa94-3580-4699-be44-26fcd8a2f12a">
+      <output0 value="Color(Red = 255, Green = 51, Blue = 0, Alpha = 255)" />
+    </Node>
+    <Node guid="05069d1f-d72c-42fb-84ed-55091384be56">
+      <output0 value="{-1.5,-1.5,-0.5,-0.5}" />
+      <output1 value="{2.5,2.5,2.5,2.5}" />
+      <output2 value="{5,3.85714285714286,3.85714285714286,5}" />
+    </Node>
+    <Node guid="6a45f7ec-d514-473e-a6df-e725b76d9cc3">
+      <output0 value="{Point(X = -1.500, Y = 2.500, Z = 5.000),Point(X = -1.500, Y = 2.500, Z = 3.857),Point(X = -0.500, Y = 2.500, Z = 3.857),Point(X = -0.500, Y = 2.500, Z = 5.000)}" />
+    </Node>
+    <Node guid="056ccc88-74b6-458e-a818-acd37e926085">
+      <output0 value="Rectangle(Width = 1.000, Height = 1.143)" />
+    </Node>
+    <Node guid="d58ac779-ac7d-4e03-9901-f1e3ce8b2161">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="b38f01dd-970b-41e2-b065-d637ed176fdb">
+      <output0 value="{1.5,1.5,0.5,0.5}" />
+      <output1 value="{2.5,2.5,2.5,2.5}" />
+      <output2 value="{5,3.85714285714286,3.85714285714286,5}" />
+    </Node>
+    <Node guid="b660086d-2ff4-4f60-a10c-f543cd3bcaa9">
+      <output0 value="Rectangle(Width = 1.000, Height = 1.143)" />
+    </Node>
+    <Node guid="23caa684-5757-490c-aef9-2527f7df3c3a">
+      <output0 value="{0}" />
+    </Node>
+    <Node guid="af1ddf86-41aa-4c76-b08b-e5f8b8234923">
+      <output0 value="{0}" />
+    </Node>
+    <Node guid="5b000591-34a5-40ec-b34d-ace35805b861">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143),Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="6922e075-3b0e-4bb8-b36e-4c0ed8486c5b">
+      <output0 value="{Point(X = 1.500, Y = 2.500, Z = 5.000),Point(X = 1.500, Y = 2.500, Z = 3.857),Point(X = 0.500, Y = 2.500, Z = 3.857),Point(X = 0.500, Y = 2.500, Z = 5.000)}" />
+    </Node>
+    <Node guid="20cbc2b0-166e-4b27-a986-738cf34dd0fc">
+      <output0 value="1" />
+    </Node>
+    <Node guid="17947f00-d981-48b9-b486-c08693b612cb">
+      <output0 value="1" />
+    </Node>
+    <Node guid="6a881b06-6cfb-4d4c-84ea-896202f5607e">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="eb51640a-7ffb-4188-931d-0d6960f1a889">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="9ddfd3e3-7abf-4951-b8a2-1a5e7c6673fb">
+      <output0 value="{Rectangle(Width = 1.000, Height = 1.143),Rectangle(Width = 1.000, Height = 1.143)}" />
+    </Node>
+    <Node guid="90188ce6-a260-4aab-a7a8-66c83526fe3b">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="1113c6a6-5dd2-4e89-a892-3374f5a8d48e">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+    <Node guid="83d431ab-aa34-43c4-b630-58fcc6569518">
+      <output0 value="{{Rectangle(Width = 1.000, Height = 1.143)},{Rectangle(Width = 1.000, Height = 1.143)}}" />
+    </Node>
+  </evaluation0>
+</evaluations>

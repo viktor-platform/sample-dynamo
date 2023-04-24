@@ -1,2 +1,1 @@
 viktor==13.8.0
-trimesh==3.9.3

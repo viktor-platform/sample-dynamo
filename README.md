@@ -1,12 +1,11 @@
-# Tuturial dynamo 
-Welcome to this tutorial on integrating Dynamo with VIKTOR! VIKTOR is a platform dedicated to the Engineering and Construction industry, providing a seamless integration with 3rd party software. In this tutorial, we will explore how to render a basic house with Dynamo and visualize it in VIKTOR. To get started, the user will provide parameters such as the number of houses, width, depth, number of floors, and heights for floors and roofs. The Viktor worker will then compute the Dynamo model using the command-line interface included within Dynamo Sandbox. The geometry of the model is generated using either Autodesk Revit or FormIt. The geometry JSON is then converted to a mesh, which is rendered and visualized in Viktor. In this tutorial, we will cover the step-by-step process of setting up a VIKTOR app with Dynamo integration we will cover:
+# Tutorial dynamo 
+Welcome to this tutorial on integrating Dynamo with VIKTOR! VIKTOR is a platform dedicated to the Engineering and Construction industry, providing a seamless integration with 3rd party software. In this tutorial, we will explore how to render a basic house with Dynamo and visualize it in VIKTOR. To get started, the user will provide parameters such as the number of houses, width, depth, number of floors, and heights for floors and roofs. The VIKTOR worker will then compute the Dynamo model using the command-line interface included within Dynamo Sandbox. The geometry of the model is generated using either Autodesk Revit or FormIt. The geometry JSON is then converted to a mesh, which is rendered and visualized in VIKTOR. In this tutorial, we will cover the step-by-step process of setting up a VIKTOR app with Dynamo integration we will cover:
 
 Step 1. [Set up a VIKTOR app with Dynamo integration](#1-creating-a-simple-template)
 
 Step 2. [Setting up worker](#2-fill-the-template-with-data)
 
-By the end of this tutorial, you will have created a simple viktor application that creates a geometry and data view of a simple house, see gif below:
-
+By the end of this tutorial, you will have created a simple VIKTOR application that creates a geometry and data view of a simple house, see GIF below:
 ![My Image](Read_me_files/Animation.gif)
 
 
@@ -19,8 +18,7 @@ By the end of this tutorial, you will have created a simple viktor application t
 :::
 
 During the tutorial, we added some links to additional information; but don't let them distract you too much. Stay
-focused on completing the tutorial. After this, you will know everything you need to create an app which includes Dynamo integration.
-
+focused on completing the tutorial. After this, you will know everything you need to create an app which includes integrating with Dynamo.
 
 ## Step 1: Set up a VIKTOR app with Dynamo integration
 
@@ -29,7 +27,7 @@ Let us assume that you have not yet set up a VIKTOR app yet. To set up a new pro
 the terminal:
 
 ```
-viktor-cli create-app my-Dynamo-app
+VIKTOR-cli create-app my-dynamo-app
 ```
 
 This will set up a project/directory with the starting code needed to create a VIKTOR app.
@@ -37,10 +35,10 @@ This will set up a project/directory with the starting code needed to create a V
 In the `app.py` file, you will see the following code:
 
 ```python
-from viktor import ViktorController
-from viktor.parametrization import ViktorParametrization
-class Parametrization(ViktorParametrization):
-class Controller(ViktorController):
+from VIKTOR import VIKTORController
+from VIKTOR.parametrization import VIKTORParametrization
+class Parametrization(VIKTORParametrization):
+class Controller(VIKTORController):
     label = 'My Entity Type'
     parametrization = Parametrization
 ```
@@ -67,8 +65,8 @@ will look like in the `Parametrization` class:
 
 ```python
 ...
-from viktor.parametrization import ViktorParametrization, NumberField
-class Parametrization(ViktorParametrization):
+from VIKTOR.parametrization import VIKTORParametrization, NumberField
+class Parametrization(VIKTORParametrization):
     # Input fields
     number_of_houses = NumberField("Number of houses", max=8.0, min=1.0, variant='slider', step=1.0, default=3.0)
     number_of_floors = NumberField("Number of floors", max=5.0, min=1.0, variant='slider', step=1.0, default=2.0)
@@ -79,15 +77,15 @@ class Parametrization(ViktorParametrization):
 ```
 
 ### Step 1.3 Define the app logic to update the dynamo file
- This step, we will define the code to take the parameters as input, update the dynamo file, and return the updated files. This will be done by creating a `staticmethod`  in the `controller` class, similar to what is described in the [Generic integration](https://docs.viktor.ai/docs/create-apps/software-integrations/dynamo) section of the VIKTOR documentation.
+ This step, we will define the code to take the parameters as input, update the dynamo file, and return the updated files. This will be done by creating a `staticmethod`  in the `controller` class, similar to what is described in the [Generic integration](https://docs.VIKTOR.ai/docs/create-apps/software-integrations/dynamo) section of the VIKTOR documentation.
 
 
 The following code will update the nodes of the dynamo file and generate an input file  with the parameters from the parametrization class:
 
 ```python
 from pathlib import Path
-from viktor import File
-from viktor.external.dynamo import DynamoFile
+from VIKTOR import File
+from VIKTOR.external.dynamo import DynamoFile
 
 @staticmethod
 def update_model(params) -> Tuple[File, DynamoFile]:
@@ -123,8 +121,8 @@ In this step, we will define code to extract data from the dynamo file and outpu
 
 ```python
 from pathlib import Path
-from viktor import File
-from viktor.external.dynamo import DynamoFile
+from VIKTOR import File
+from VIKTOR.external.dynamo import DynamoFile
 
 @staticmethod
 def convert_dynamo_file_to_data_items(input_file: DynamoFile, output_file: File) -> DataGroup:
@@ -162,8 +160,8 @@ Let us go through the above mentioned logic:
 We create a new `GeometryAndDataView` method insdie the `controller` class. This method will enable us to show the 3D model of the house along with its data. Here is the code:
 
 ```python
-from viktor.external.dynamo import convert_geometry_to_glb
-from viktor.views import GeometryView, GeometryResult
+from VIKTOR.external.dynamo import convert_geometry_to_glb
+from VIKTOR.views import GeometryView, GeometryResult
 
 @GeometryAndDataView("Building 3D", duration_guess=5)
 def geometry_and_data_view(self, params, **kwargs):
@@ -209,7 +207,7 @@ Follow these steps to install the worker:
 
 2. Specification of the installation directory. The standard directory that is used for the installation is:
 ```
-C:\Program Files\Viktor\Viktor for <application> <software package> <version>
+C:\Program Files\VIKTOR\VIKTOR for <application> <software package> <version>
 ```
 3. Configuration of the worker. Using the installation wizard you will be asked to fill the required information step-by-step. During this installation wizard you are asked for your credentials.
 
@@ -223,7 +221,7 @@ $\qquad$ 4.2 Click the  "Create worker" button (top right)
 
 $\qquad$ 4.3 Fill in the description, allocation to specific and use your workspace  
 
-$\qquad$ 4.4 Click "Create". You will get the following pop-up (see figure below). Paste the credential code and place it in the install wizard immediately. Viktor will not preserve this data for security reasons.
+$\qquad$ 4.4 Click "Create". You will get the following pop-up (see figure below). Paste the credential code and place it in the install wizard immediately. VIKTOR will not preserve this data for security reasons.
 
 
 ![My Image](Read_me_files/Credentials_popup.png)
@@ -257,7 +255,7 @@ maxParallelProcesses: 1 # must be one, please do not change
 For more information about the Dynamo CLI is referred to: https://github.com/DynamoDS/Dynamo/wiki/Dynamo-Command-Line-Interface
 
 ## Step 2.3 Start up worker 
-Once you have saved your `config.yaml` file, you can run **viktor-worker-gneric**  file. Be sure to run the file with Administrator rights. If all went well, you will be presented in the worker terminal with the message: "Successfully connected to the server". Also in in top right corner you should see a green bullet( red circle), see figure below.
+Once you have saved your `config.yaml` file, you can run **VIKTOR-worker-gneric**  file. Be sure to run the file with Administrator rights. If all went well, you will be presented in the worker terminal with the message: "Successfully connected to the server". Also in in top right corner you should see a green bullet( red circle), see figure below.
 
 
 ![My Image](Read_me_files/Connection.png)
@@ -268,16 +266,16 @@ Once you have saved your `config.yaml` file, you can run **viktor-worker-gneric*
 ```python showLineNumbers
 from typing import Tuple
 
-from viktor import ViktorController
-from viktor.parametrization import ViktorParametrization, NumberField
-from viktor.views import GeometryAndDataView, GeometryAndDataResult, DataItem, DataGroup
-from viktor.external.generic import GenericAnalysis
-from viktor.external.dynamo import DynamoFile, convert_geometry_to_glb, get_dynamo_result
-from viktor.core import File
+from VIKTOR import VIKTORController
+from VIKTOR.parametrization import VIKTORParametrization, NumberField
+from VIKTOR.views import GeometryAndDataView, GeometryAndDataResult, DataItem, DataGroup
+from VIKTOR.external.generic import GenericAnalysis
+from VIKTOR.external.dynamo import DynamoFile, convert_geometry_to_glb, get_dynamo_result
+from VIKTOR.core import File
 from pathlib import Path
 
 
-class Parametrization(ViktorParametrization):
+class Parametrization(VIKTORParametrization):
     # Input fields
     number_of_houses = NumberField("Number of houses", max=8.0, min=1.0, variant='slider', step=1.0, default=3.0)
     number_of_floors = NumberField("Number of floors", max=5.0, min=1.0, variant='slider', step=1.0, default=2.0)
@@ -287,8 +285,8 @@ class Parametrization(ViktorParametrization):
     height_roof = NumberField("Height roof", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5, suffix='m')
 
 
-class Controller(ViktorController):
-    viktor_enforce_field_constraints = True  # Resolves upgrade instruction https://docs.viktor.ai/sdk/upgrades#U83
+class Controller(VIKTORController):
+    VIKTOR_enforce_field_constraints = True  # Resolves upgrade instruction https://docs.VIKTOR.ai/sdk/upgrades#U83
 
     label = 'Residential Block'
     parametrization = Parametrization

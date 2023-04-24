@@ -2,7 +2,12 @@ from typing import Tuple
 
 from viktor import ViktorController
 from viktor.parametrization import ViktorParametrization, NumberField
-from viktor.views import GeometryAndDataView, GeometryAndDataResult, DataItem, DataGroup
+from viktor.views import GeometryAndDataView
+from viktor.views import GeometryAndDataResult 
+from viktor.views import DataItem
+from viktor.views import DataGroup
+from viktor.views import GeometryResult
+from viktor.views import GeometryView
 from viktor.external.generic import GenericAnalysis
 from viktor.external.dynamo import DynamoFile, convert_geometry_to_glb, get_dynamo_result
 from viktor.core import File
@@ -98,3 +103,19 @@ class Controller(ViktorController):
             DataItem(label="CO₂ emission", value=round(float(co2), 2), suffix="ton CO₂"),
         )
         return data_group
+
+
+    @GeometryView("Mocked 3d model", duration_guess = 1)
+    def mocked_geometry_view(self, params, **kwargs):
+        # Step 1: Update model
+        input_file, dynamo_file = self.update_model(params)
+
+        # Step 2: Running analyses
+        file_path = Path(__file__).parent / "Mocked_3d_model.json"
+        _3d_file = File.from_path(file_path)
+
+        # Step 3: Processing geometry
+        glb_file = convert_geometry_to_glb(_3d_file)
+
+
+

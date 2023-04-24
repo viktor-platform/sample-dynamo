@@ -28,7 +28,7 @@ By the end of this tutorial, you will have created a simple VIKTOR application t
 
 So, let's get started and learn how to create amazing 3D models in Viktor using Python!
 
-:::Tip
+:::tip
 You can find the complete code [below](#All-code-together:)
 :::
 
@@ -72,7 +72,7 @@ While this tutorial was written using SDK version 14.0.0.
 :::
 
 ### Add inputfields 
-We will add 6 inputfields to our app: `number_of_houses`, `number_of_floors`, `depth`, `width`, `height_floor` and `height_roof`. We will use [Numberfield]( /sdk/api/parametrization?_highlight=numberfield#_NumberField),  for this.
+We will add 6 inputfields to our app: `number_of_houses`, `number_of_floors`, `depth`, `width`, `height_floor` and `height_roof`. We will use [Numberfield]( /sdk/api/parametrization#_NumberField),  for this.
 
 1. Open `app.py`, and add the relavant field to your parametrization. If you like you could accompany the fields with some instructive text. Don't forget to import the necessary fields. In the end your `app.py` file should look like this:
 
@@ -136,7 +136,7 @@ def update_model(params) -> Tuple[File, DynamoFile]:
 Let us go through the above mentioned logic:
 1. Retrieve the input files for the analysis, in this case the `dynamo_model_sample_app.dyn` file, and create a DynamoFile object instantiated from the `dynamo_model_sample_app.dyn` file.
 2. With the update method, the value of input nodes can be updated.
-3. When all inputs have been updated as desired, the generate method can be used to generate an updated [File](/sdk/api/core?_highlight=file#_File) object.
+3. When all inputs have been updated as desired, the generate method can be used to generate an updated [File](/sdk/api#_File) object.
 
 :::Note
 To create this method you will have to import different functions. See code below:
@@ -176,7 +176,7 @@ To visualize the mocked output add a `GeometryView` method to your `Controller` 
 Let us go through the above mentioned logic:
 1. Update the Dynamo file with the `update_model` method(see chapter 2)
 2. For now we are using a mocked file, instead of running the analyses in Dynamo. The mocked file can be downloaded [here](). In chapter 7 it is explained how to create the json file using the Dynamo script.
-3. With the helper function [convert_geometry_to_glb](/sdk/api/external/dynamo?_highlight=convert_geom#_convert_geometry_to_glb), you can convert the json file to a GLB type file, which can directly be visualized in a `GeometryView`.
+3. With the helper function [convert_geometry_to_glb](/sdk/api/external/#_convert_geometry_to_glb), you can convert the json file to a GLB type file, which can directly be visualized in a `GeometryView`.
 4. Refresh your app, and you should see a 3D model of a house.
 
 :::note
@@ -191,7 +191,7 @@ from viktor.external.dynamo import convert_geometry_to_glb
 
 
 
-In this chapter, we will define code to extract data from the dynamo file and output file. The dynamo file is used to get the node id, and the output.xml file is used to get the values. We will be creating another `staticmethod`  in the `Controller`    class. See code below:
+In this chapter, we will define code to extract data from the dynamo file and output file. The dynamo file is used to get the node id, and the output.xml file is used to get the values. We will be creating another `staticmethod`  in the `Controller` class. See code below:
 
 
 ```python

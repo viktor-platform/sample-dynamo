@@ -7,9 +7,13 @@ from viktor.views import GeometryAndDataResult
 from viktor.views import DataItem
 from viktor.views import DataGroup
 from viktor.views import GeometryResult
+from viktor.views import DataResult
+from viktor.views import DataView
 from viktor.views import GeometryView
 from viktor.external.generic import GenericAnalysis
-from viktor.external.dynamo import DynamoFile, convert_geometry_to_glb, get_dynamo_result
+from viktor.external.dynamo import DynamoFile
+from viktor.external.dynamo import get_dynamo_result
+from viktor.external.dynamo import convert_geometry_to_glb
 from viktor.core import File
 from pathlib import Path
 
@@ -116,6 +120,50 @@ class Controller(ViktorController):
 
         # Step 3: Processing geometry
         glb_file = convert_geometry_to_glb(_3d_file)
+
+        return GeometryResult(geometry=glb_file)
+    
+    @DataView("Mocked data results", duration_guess = 1)
+    def mocked_data_view(self, params, **kwargs):
+        # Step 1: Update model
+        input_file, dynamo_file = self.update_model(params)
+
+        # Step 2: Running analyses
+        file_path = Path(__file__).parent / "Mocked_data_results.xml"
+        _data_file = File.from_path(file_path)
+
+        # Step 3: Process numerical output
+        data_group = self.convert_dynamo_file_to_data_items(dynamo_file, _data_file)
+
+        return DataResult(data=data_group)
+
+    
+    @GeometryAndDataView("Mocked 3d/data", duration_guess=5)
+    def geometry_and_data_view(self, params, **kwargs):
+        """The endpoint that initiates the logic to visualize the geometry and data executed
+        and retrieved from a Dynamo script."""
+        # Step 1: Update model
+        input_file, dynamo_file = self.update_model(params)
+
+        
+        # Step 2: Running analyses
+        file_path = Path(__file__).parent / "Mocked_3d_model.json"
+        _3d_file = File.from_path(file_path)
+
+        file_path = Path(__file__).parent / "Mocked_data_results.xml"
+        _data_file = File.from_path(file_path)
+
+        # Step 3: Processing geometry
+        glb_file = convert_geometry_to_glb(_3d_file)
+
+        # Step 4: Process numerical output
+        data_group = self.convert_dynamo_file_to_data_items(dynamo_file, _data_file)
+
+        return GeometryAndDataResult(geometry=glb_file, data=data_group)
+    
+
+
+
 
 
 

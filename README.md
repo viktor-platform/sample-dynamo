@@ -17,7 +17,7 @@ Welcome to this tutorial on integrating Dynamo with VIKTOR! VIKTOR is a platform
 - [Create a mocked GeometryView](#3-Create-a-GeometryView-with-mocked-ouput-files)
 - [Create a data processing method](#4-Create-a-data-processing-method)
 - [Create a Data View with the mocked output files](#5-Create-a-DataView-with-mocked-ouput-files)
-- [Create a GeometryAndDataView with the mocked output files](#6-Create-a GeometryAndDataView-with-the-mocked-output-file)
+- [Create a geometry processing method](#6-Create-a-GeometryAndDataView-with-the-mocked-output-file)
 - [Add the worker logic to supply](#7-Add-the-worker-logic-to-supply-the-real-output-files)
 - [Setting up worker](#8-Setting-up-worker)
 
@@ -37,7 +37,7 @@ You can find the complete code [below](#All-code-together:)
 :::note Prerequisites
 - You completed [Create your first app](/docs/getting-started/create-first-app) section.
 - You have some experience with reading Python code
-- You have downloaded the Dynamo file
+- You have downloaded the Dynamo file, [link]
 :::
 
 During the tutorial, we added some links to additional information; but don't let them distract you too much. Stay
@@ -143,15 +143,15 @@ To create this method you will have to import different functions. See code belo
 
 ```python showLineNumbers
 from pathlib import Path
-from VIKTOR import File
-from VIKTOR.external.dynamo import DynamoFile
+from viktor import File
+from viktor.external.dynamo import DynamoFile
 ```
 :::
 
 
 ## 3 Create a GeometryView with mocked ouput files
 
-In this chapter we will create a [GeometryView](/sdk/api/views#_GeometryView) to display the house. We will use a mocked output file for now, click [here] to download the json file. In chapter ... we will create the json file using the Dynamo script. 
+In this chapter we will develop a [GeometryView](/sdk/api/views#_GeometryView) to display the house's geometry. However, for now, we will use a mocked output file. You can download the JSON file by clicking [here]. In [chapter 7](#7-Add-the-worker-logic-to-supply-the-real-output-files) we will create the json file using the Dynamo script. 
 
 To visualize the mocked output add a `GeometryView` method to your `Controller` class, see code below:
 
@@ -175,7 +175,7 @@ To visualize the mocked output add a `GeometryView` method to your `Controller` 
 
 Let us go through the above mentioned logic:
 1. Update the Dynamo file with the `update_model` method(see chapter 2)
-2. For now we are using a mocked file, instead of running the analyses in Dynamo. The mocked file can be downloaded [here](). In chapter 7 it is explained how to create the json file using the Dynamo script.
+2. For now we are using a mocked file, instead of running the analyses in Dynamo. The mocked file can be downloaded [here](). In [chapter 7](#7-Add-the-worker-logic-to-supply-the-real-output-files) it is explained how to create the json file using the Dynamo script.
 3. With the helper function [convert_geometry_to_glb](/sdk/api/external/#_convert_geometry_to_glb), you can convert the json file to a GLB type file, which can directly be visualized in a `GeometryView`.
 4. Refresh your app, and you should see a 3D model of a house.
 
@@ -188,8 +188,6 @@ from viktor.external.dynamo import convert_geometry_to_glb
 :::
 
 ## 4 Create a data processing method
-
-
 
 In this chapter, we will define code to extract data from the dynamo file and output file. The dynamo file is used to get the node id, and the output.xml file is used to get the values. We will be creating another `staticmethod`  in the `Controller` class. See code below:
 
@@ -236,7 +234,7 @@ from viktor.external.dynamo import get_dynamo_result
 
 ## 5. Create a DataView with mocked ouput files
 
-In this chapter we will create a [DataView](/sdk/api/views#_DataView) to display the data. We will use a mocked output file for now. In chapter 7 we will create the xml file using the dynamo script.
+In this chapter we will create a [DataView](/sdk/api/views#_DataView) to display the data. However, for now, we will use a mocked output file. You can download the xml file by clicking [here]. In [chapter 7](#7-Add-the-worker-logic-to-supply-the-real-output-files) we will create the xml file using the dynamo script.
 
 To visualize the mocked output add a `DataView` method to your `Controller` class, see code below:
 
@@ -379,11 +377,11 @@ class Controller(ViktorController):
 ```
 
 ::: CONGRATULATIONS!!!
-You should be able to see a a geometry view and data view, that is showing a 3d house and some data. In the next chapter you will use the Dynamo script with to get the real output files.
+By now, you should be able to see a GeometryView and a DataView displaying a 3D house and some data, respectively, using the mocked files. In the next chapter, we will use the Dynamo script to generate the actual output files, replacing the mocked files with real data.
 :::
 
 ## 7 Add the worker logic to supply the real output files 
-In this chapter we will add the logic to supply the real output files. This means that we will replace the mocked files with the real output files from the Dynamo script. The first thing we will do is change the `geometry_and_data_view` method, so that it will return the output files that are generated by the Dynamo script.  See code below:
+In this chapter, we will implement the logic to supply the actual output files generated by the Dynamo script, replacing the previously mocked files. We will begin by modifying the `geometry_and_data_view` method to return the real output files generated by the script. Please refer to the code snippet below:
 
 ```python showLineNumbers
     @GeometryAndDataView("Building 3D", duration_guess=5)
@@ -487,7 +485,7 @@ For more information about the Dynamo CLI is referred to: https://github.com/Dyn
 
 ### Start up worker 
 
-Once you have saved your `config.yaml` file, you can run **VIKTOR-worker-gneric**  file. Be sure to run the file with Administrator rights. If all went well, you will be presented in the worker terminal with the message: "Successfully connected to the server". Also in in top right corner you should see a green bullet( red circle), see figure below.
+Once you have saved your `config.yaml` file, you can run **VIKTOR-worker-gneric**  file. Be sure to run the file with Administrator rights. If all went well, you will be presented in the worker terminal with the message: "Successfully connected to the server". Also in in top right corner you should see a green bullet(red circle), see figure below.
 
 
 ![My Image](Read_me_files/Connection.png)
@@ -496,16 +494,25 @@ Once you have saved your `config.yaml` file, you can run **VIKTOR-worker-gneric*
 ```python showLineNumbers
 from typing import Tuple
 
-from VIKTOR import VIKTORController
-from VIKTOR.parametrization import VIKTORParametrization, NumberField
-from VIKTOR.views import GeometryAndDataView, GeometryAndDataResult, DataItem, DataGroup
-from VIKTOR.external.generic import GenericAnalysis
-from VIKTOR.external.dynamo import DynamoFile, convert_geometry_to_glb, get_dynamo_result
-from VIKTOR.core import File
+from viktor import ViktorController
+from viktor.parametrization import ViktorParametrization, NumberField
+from viktor.views import GeometryAndDataView
+from viktor.views import GeometryAndDataResult 
+from viktor.views import DataItem
+from viktor.views import DataGroup
+from viktor.views import GeometryResult
+from viktor.views import DataResult
+from viktor.views import DataView
+from viktor.views import GeometryView
+from viktor.external.generic import GenericAnalysis
+from viktor.external.dynamo import DynamoFile
+from viktor.external.dynamo import get_dynamo_result
+from viktor.external.dynamo import convert_geometry_to_glb
+from viktor.core import File
 from pathlib import Path
 
 
-class Parametrization(VIKTORParametrization):
+class Parametrization(ViktorParametrization):
     # Input fields
     number_of_houses = NumberField("Number of houses", max=8.0, min=1.0, variant='slider', step=1.0, default=3.0)
     number_of_floors = NumberField("Number of floors", max=5.0, min=1.0, variant='slider', step=1.0, default=2.0)
@@ -515,23 +522,23 @@ class Parametrization(VIKTORParametrization):
     height_roof = NumberField("Height roof", max=3.0, min=2.0, variant='slider', step=0.1, default=2.5, suffix='m')
 
 
-class Controller(VIKTORController):
-    VIKTOR_enforce_field_constraints = True  # Resolves upgrade instruction https://docs.VIKTOR.ai/sdk/upgrades#U83
+class Controller(ViktorController):
+    viktor_enforce_field_constraints = True  # Resolves upgrade instruction https://docs.viktor.ai/sdk/upgrades#U83
 
     label = 'Residential Block'
     parametrization = Parametrization
 
     @staticmethod
     def update_model(params) -> Tuple[File, DynamoFile]:
-        """This method updates the nodes of the Dynamo file with the parameters
+        """This method updates the nodes of the dynamo file with the parameters
         from the parametrization class."""
 
-        # First the path to the Dynamo file is specified and loaded
+        # First the path to the dynamo file is specified and loaded
         file_path = Path(__file__).parent / "dynamo_model_sample_app.dyn"
         _file = File.from_path(file_path)
         dyn_file = DynamoFile(_file)
 
-        # Update Dynamo file with parameters from user input
+        # Update dynamo file with parameters from user input
         dyn_file.update("Number of houses", params.number_of_houses)
         dyn_file.update("Number of floors", params.number_of_floors)
         dyn_file.update("Depth", params.depth)
@@ -573,7 +580,7 @@ class Controller(VIKTORController):
     @staticmethod
     def convert_dynamo_file_to_data_items(input_file: DynamoFile, output_file: File) -> DataGroup:
         """Extracts the output of the Dynamo results by using the input and output files."""
-        # Collect ids for the computational output from the Dynamo file (numerical output)
+        # Collect ids for the computational output from the dynamo file (numerical output)
         output_id_floor_area = input_file.get_node_id("(OUTPUT) Floor area per house")
         output_id_total_cost = input_file.get_node_id("(OUTPUT) Total cost")
         output_id_mki = input_file.get_node_id("(OUTPUT) MKI")
@@ -594,6 +601,14 @@ class Controller(VIKTORController):
             DataItem(label="CO₂ emission", value=round(float(co2), 2), suffix="ton CO₂"),
         )
         return data_group
+
+
+
+
+
+    
+
+    
 
 ```
 

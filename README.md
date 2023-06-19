@@ -37,6 +37,7 @@ You can find the complete code [below](#All-code-together:)
 :::note Prerequisites
 - You completed [Create your first app](/docs/getting-started/create-first-app) section.
 - You have some experience with reading Python code
+- You need experience with creating Dynamo scripts.
 - You have downloaded the Dynamo file, [link]
 :::
 

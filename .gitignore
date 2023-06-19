@@ -58,6 +58,7 @@ Temporary Items
 # folder form Pycharm 
 .idea/
 env
+/venv
 
 .coverage
 
